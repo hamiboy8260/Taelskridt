@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tæl skridt</title>
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Example description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="navigation-bar">
+
+            <div id="navigation-container">
+
+                <a href="index.html">
+                    <img src="images/logo-white-width.png">
+
+                </a>
+
+                <ul>
+                    <li><a href="tilmeld.html">Tilmeld</a></li>
+                    <li><a href="#">Log ind</a></li>
+                    <li><a href="#">Priser</a></li>
+                    <li><a href="#">Matrialer</a></li>
+                    <li><a href="#">Om</a></li>
+                </ul>
+            </div>
+
+
+
+
+    </header>
+
+    <main>
+
+
+
+        <div class="text-container">
+
+            <div id=text-box>
+
+                <h2>Læs venligst</h2>
+
+                <p> Tilmeld eller genaktivér dit hold til Tæl Skridt.Denne tilmelding er KUN for holdkaptajner. Når din holdkaptajn har oprettet jeres hold, kan deltagere logge ind. <br> <br> Holdkaptajnen angiver navn og mail på holdets deltagere som senere
+                    skal bruges til log in. Ønsker du at aktivere et tidligere hold, skal du stadig udfylde nævnte oplysninger. <br> <br> Vores system gemmer visse oplysninger, så tidligere betalinger bliver husket. Ved at deltage i Tæl Skridt godkender
+                    du samtidig, at vi må skrive til dig og dine holddeltagere vedrørende kampagnen på de angivne mailadresser.</p>
+
+
+                <a href="#" class="button-login">Login</a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="form-box">
+
+            <div class="form-container">
+
+
+                <img src="images/logo-white-width.png">
+
+
+                <form action="formdata.php" method="post">
+                    <section id="navn">
+                        <label for="fname">Navn:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+
+                        <label for="lname">Email:</label><br>
+                        <input type="text" id="lname" name="lname"><br>
+
+                        <label for="fname">Mobil:</label><br>
+                        <input type="tel" id="fname" name="fname"><br>
+
+                        <label for="lname">Kodeord:</label><br>
+                        <input type="password" id="lname" name="lname"><br><br>
+
+                        <button type="button" id="naeste"> Næste </button>
+                    </section>
+
+                    <section id="navn1">
+
+                        <label for="fname">Firmanavn:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+
+                        <label for="lname">Adresse:</label><br>
+                        <input type="text" id="lname" name="lname"><br>
+
+                        <label for="fname">Postnummer:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+
+                        <label for="lname">By:</label><br>
+                        <input type="text" id="lname" name="lname"><br><br>
+
+                        <label class="container">
+                            <input type="checkbox">Jeg acceptere betingelserne
+                            <span class="checkmark"></span>
+                        </label> <br>
+
+                        <label class="container">
+
+                            <input type="checkbox">Jeg vil modtage nyhedsbreve
+
+                            <span class="checkmark"></span>
+                        </label> <br> <br>
+
+                        <button type="button" id="opretBtn"><a href="tilmeld.html">Opret</a></button>
+                    </section>
+                </form>
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </main>
+    <footer></footer>
+    <!-- importerer jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            /// kode herfra
+            console.log('jQuery kører');
+
+            // gem det som skal være usynligt
+            $('#navn1').hide();
+            $('#valg').hide();
+
+            // klik på #naeste
+            $('#naeste').click(function() {
+                console.log('der klikkes på næste');
+                // skjule #navn
+                $('#navn').hide();
+                // vise #radio
+                $('#navn1').show();
+            });
+
+            // klik på #valgBtn
+            $('#valgBtn').click(
+                function() {
+                    $('#navn1').hide(); // skjul radio buttons
+                    $('#valg').show(); // viser valg
+                }
+            );
+
+            /// kode slut
+        }); // må ikke slettes
+
+    </script>
+</body>
+
+</html>

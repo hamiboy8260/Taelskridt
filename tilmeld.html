@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tæl skridt</title>
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Example description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+
+        <div class="navigation-bar">
+
+            <div id="navigation-container">
+
+
+                <a href="index.html">
+                    <img src="images/logo-white-width.png">
+
+                </a>
+
+                <ul>
+                    <li><a href="#">Tilmeld</a></li>
+                    <li><a href="#">Log ind</a></li>
+                    <li><a href="#">Priser</a></li>
+                    <li><a href="#">Matrialer</a></li>
+                    <li><a href="#">Om</a></li>
+                </ul>
+            </div>
+
+
+
+
+    </header>
+
+    <main>
+
+
+
+        <div class="vertical-menu">
+            <a href="#" class="active">Menu</a>
+            <a href="#">Ordreoversigt</a>
+            <a href="#">Rediger hold</a>
+            <a href="#">Inspirationsbox</a>
+            <a href="#">Indtast skridt</a>
+            <a href="#">Indtast for holdet</a>
+            <a href="#">Stillingen</a>
+            <a href="#">Dine skridt i KM</a>
+        </div>
+
+
+
+        <table>
+
+            <tr>
+                <th>Antal skridt</th>
+                <th>Antal KM</th>
+            </tr>
+
+            <tr>
+                <td>22,445</td>
+                <td>18 KM</td>
+            </tr>
+
+
+
+
+
+        </table>
+
+
+        <div class=text-box>
+
+
+            <h4>Hvad svarer dine skridt til på et kort</h4>
+
+        </div>
+
+
+        <div id="map"></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGFtaWQ4MjYwIiwiYSI6ImNrZnFrZXVvajBieGEzMm8wNXlidTRuaTkifQ.r8bqR0H67DtlDyU4vMrZcA';
+            var monument1 = [10.1166662, 56.1999992];
+            var monument2 = [9.929799, 56.037247];
+            var map = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/hamid8260/ckfqkpwg116s419rnfk0y21rv', // style URL
+                center: monument1, // start position [lng, lat]
+                zoom: 8 // start zoom
+            });
+
+
+            // Opret popuppen
+            var popup = new mapboxgl.Popup({
+                offset: 25
+            }).setText(
+                'Start'
+            );
+
+            // Opret DOM elementet for markeren
+            var el = document.createElement('div');
+            el.id = 'marker1';
+
+            // Opret marker
+            new mapboxgl.Marker(el)
+                .setLngLat(monument1)
+                .setPopup(popup) // sets a popup on this marker
+                .addTo(map);
+
+            // Opret ny popup
+            var popup1 = new mapboxgl.Popup({
+                offset: 25
+            }).setText(
+                'Slut'
+            );
+            var el = document.createElement('div');
+            el.id = 'marker2';
+
+            // Opret ny marker
+            new mapboxgl.Marker(el)
+                .setLngLat(monument2)
+                .setPopup(popup1) // sets a popup on this marker
+                .addTo(map);
+
+        </script>
+
+
+
+
+
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src=""></script>
+</body>
+
+</html>
